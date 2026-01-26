@@ -17,7 +17,7 @@ async function generateNewShortUrl(req, res) {
     visitHistory: [],
   });
 
-  return res.status(200).json({ ShortUrl: shortId });
+  return res.status(200).render( "home", { ShortUrl: shortId });
 }
 
 async function redirectMailUrl(req, res) {
@@ -28,7 +28,7 @@ async function redirectMailUrl(req, res) {
     },
     {
       $push: {
-        visitHistory: { timeStamps: Date.now() },
+        visitHistory: { timestamp: new Date() },
       },
     },
   );
@@ -39,19 +39,28 @@ async function redirectMailUrl(req, res) {
   return res.redirect(redirectMailWebLink);
 }
 
-let viewAnalytics = async (req, res) => {
+const viewAnalytics = async (req, res) => {
   const shortId = req.params.shortId;
   const analytics = await URL.findOne({ shortId });
   res
     .status(200)
-    .json({
-      "Total Clicks": analytics.visitHistory.length,
-      detail: analytics.visitHistory,
-    });
+    .render("analytics" , {
+      shortId , 
+      totalClicks : analytics.visitHistory.length,
+      history : analytics.visitHistory,
+    })
 };
+
+const homeRender = async(req,res) => {
+  const allUrls = await URL.find({});
+ return res.render("home", {
+  urls : allUrls
+ });
+}
 
 module.exports = {
   generateNewShortUrl,
   redirectMailUrl,
   viewAnalytics,
+  homeRender
 };

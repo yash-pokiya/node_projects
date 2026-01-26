@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URL Analytics</title>
+  <link rel="stylesheet" href="/css/analytics.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Short URL Analytics</h1>
+
+    <div class="card">
+      <h3>Short URL</h3>
+      <a href="http://localhost:3000/url/redirect/<%= shortId %>" target="_blank" class="link">http://localhost:3000/url/redirect/<%= shortId %></a>
+    </div>
+
+    <div class="stats">
+      <div class="stat-box">
+        <h2><%= totalClicks %></h2>
+        <p>Total Clicks</p>
+      </div>
+    </div>
+
+    <div class="history">
+      <h3>Visit History</h3>
+
+      <% if (history.length === 0) { %>
+        <p class="empty">No visits yet</p>
+      <% } else { %>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Date</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% history.forEach((item, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= new Date(item.timestamp).toLocaleDateString() %></td>
+                <td><%= new Date(item.timestamp).toLocaleTimeString() %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      <% } %>
+    </div>
+  </div>
+
+</body>
+</html>
