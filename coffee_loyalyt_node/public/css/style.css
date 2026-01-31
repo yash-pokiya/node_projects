@@ -1,0 +1,773 @@
+:root {
+    --bg-cream: #f4ece1;
+    --card-brown: #d9bc9f;
+    --accent-brown: #cf9b67;
+    --text-dark: #2b1d12;
+    --light-tan: #f9f1e7;
+}
+
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, .navbar-brand {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: transparent;
+}
+
+.logo-placeholder {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+}
+
+.btn-primary-custom {
+    background-color: var(--accent-brown);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-primary-custom:hover {
+    background-color: #b58252;
+    color: white;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: linear-gradient(to right, var(--bg-cream) 40%, rgba(244, 236, 225, 0.2)), 
+                      url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1000');
+    background-size: cover;
+    background-position: right center;
+    min-height: 400px;
+}
+
+.btn-hero {
+    background-color: var(--card-brown);
+    border: 1px solid #bda286;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Step Cards */
+.step-card {
+    background-color: var(--card-brown);
+    border-radius: 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Rewards Section */
+.section-title {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    color: #5d4037;
+}
+
+.reward-info-card {
+    background-color: var(--light-tan);
+    border-radius: 15px;
+    height: 100%;
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        background-image: none; /* Simplify on mobile for readability */
+        text-align: center;
+    }
+}
+/* =========================================
+   APPENDABLE LOGIN MODULE STYLES
+   ========================================= */
+
+#login-module {
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+#login-module .logo-placeholder {
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+}
+
+#login-module .btn-nav-custom {
+    background-color: #d9bc9f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Outer Tan Card */
+#login-module .login-outer-card {
+    background-color: #f5e6d3;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 850px;
+}
+
+/* White Inner Card */
+#login-module .login-inner-card {
+    background-color: #ffffff;
+    border-radius: 18px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+#login-module .badge-login-user {
+    background-color: #d9bc9f;
+    color: #5d4037;
+    padding: 10px 35px;
+    border-radius: 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    display: inline-block;
+}
+
+#login-module .welcome-heading {
+    font-family: 'Playfair Display', serif;
+    color: #5d4037;
+    font-weight: 700;
+}
+
+/* Custom Form Styling */
+#login-module .custom-input-group {
+    background-color: #f3e5d5;
+    border-radius: 12px;
+    height: 50px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+#login-module .custom-input-group:focus-within {
+    border-color: #b19481;
+}
+
+#login-module .form-control-plain {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.9rem;
+    color: #5d4037;
+}
+
+#login-module .btn-login-action {
+    background-color: #b19481;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#login-module .btn-login-action:hover {
+    background-color: #8d6e63;
+    transform: translateY(-2px);
+}
+
+#login-module .forgot-link {
+    color: #8d6e63;
+    text-decoration: underline dotted;
+    font-size: 0.85rem;
+}
+
+#login-module .footer-text {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Tablet & Mobile Adjustments */
+@media (max-width: 768px) {
+    #login-module .login-outer-card {
+        border-radius: 0;
+        margin: 0 -15px; /* Full width on mobile */
+    }
+    
+    #login-module .login-inner-card {
+        padding: 30px 20px !important;
+    }
+}
+/* =========================================
+   APPENDABLE DASHBOARD MODULE STYLES
+   ========================================= */
+
+#dashboard-module {
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+/* Reusable Components for Dashboard */
+#dashboard-module .profile-card, 
+#dashboard-module .info-card, 
+#dashboard-module .history-card, 
+#dashboard-module .balance-card, 
+#dashboard-module .steps-card {
+    background-color: #f5e6d3;
+    border-radius: 20px;
+    border: none;
+}
+
+#dashboard-module .user-name, 
+#dashboard-module .info-title, 
+#dashboard-module .card-heading, 
+#dashboard-module .balance-title {
+    font-family: 'Playfair Display', serif;
+    color: #5d4037;
+    font-weight: 700;
+}
+
+/* Avatar & Profile */
+#dashboard-module .avatar-circle {
+    width: 120px;
+    height: 120px;
+    border: 4px solid #5d4037;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    color: #5d4037;
+}
+
+#dashboard-module .btn-edit-profile {
+    background: linear-gradient(to bottom, #e3c4a8, #c9a688);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Information List */
+#dashboard-module .info-list li {
+    margin-bottom: 15px;
+    color: #5d4037;
+}
+
+#dashboard-module .info-list i {
+    width: 25px;
+    color: #8d6e63;
+}
+
+/* Table Styling */
+#dashboard-module .custom-table {
+    background: transparent;
+}
+
+#dashboard-module .custom-table thead th {
+    background-color: white;
+    color: #5d4037;
+    border: none;
+    font-weight: 600;
+    padding: 12px;
+}
+
+#dashboard-module .history-card {
+    border: 2px solid #f1cbb0; /* Matching the blue outline in figma */
+}
+
+/* Beans Balance */
+#dashboard-module .coffee-icon {
+    width: 140px;
+    filter: sepia(0.3);
+}
+
+#dashboard-module .beans-count h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #8d6e63;
+    margin: 0;
+}
+
+#dashboard-module .beans-count span {
+    font-weight: 700;
+    color: #8d6e63;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+/* Dashboard Steps */
+#dashboard-module .dashboard-steps li {
+    font-size: 1.5rem;
+    color: #8d6e63;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    #dashboard-module .avatar-circle {
+        width: 100px;
+        height: 100px;
+    }
+}
+/* =========================================
+   APPENDABLE REDEEM MODULE STYLES
+   ========================================= */
+
+#redeem-module {
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+#redeem-module .btn-nav-custom {
+    background-color: #d9bc9f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Sidebar Styling */
+#redeem-module .border-end-dashed {
+    border-right: 2px dashed #d9bc9f;
+}
+
+#redeem-module .section-title, 
+#redeem-module .bonus-title, 
+#redeem-module .redeem-main-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #8d6e63;
+}
+
+#redeem-module .balance-box {
+    background-color: #f5e6d3;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+#redeem-module .beans-display .count {
+    display: block;
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #8d6e63;
+    line-height: 1;
+}
+
+#redeem-module .beans-display .label {
+    font-weight: 600;
+    color: #8d6e63;
+}
+
+/* Bonus List */
+#redeem-module .bonus-hr {
+    border-top: 3px solid #d9bc9f;
+    width: 200px;
+    opacity: 1;
+}
+
+#redeem-module .bonus-list li {
+    font-size: 1.4rem;
+    color: #8d6e63;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#redeem-module .bonus-list .arrow {
+    font-family: 'Poppins', sans-serif;
+}
+
+#redeem-module .note-text {
+    font-style: italic;
+    font-weight: 600;
+    color: #8d6e63;
+    font-size: 0.9rem;
+}
+
+/* Coffee Grid */
+#redeem-module .redeem-container {
+    background-color: #f5e6d3;
+    border-radius: 25px;
+}
+
+#redeem-module .coffee-card {
+    background-color: #d9bc9f;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#redeem-module .coffee-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+#redeem-module .coffee-info h6 {
+    margin: 0;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+}
+
+#redeem-module .coffee-info p {
+    margin: 0;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#redeem-module .btn-redeem-big {
+    background-color: #d9bc9f;
+    border: 1px solid #c9a688;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 15px;
+    color: #000;
+    transition: 0.3s;
+}
+
+#redeem-module .btn-redeem-big:hover {
+    background-color: #c9a688;
+}
+
+#redeem-module .italic-note {
+    font-style: italic;
+    color: #8d6e63;
+}
+
+/* Responsive Mobile Handling */
+@media (max-width: 991px) {
+    #redeem-module .border-end-dashed {
+        border-right: none;
+        border-bottom: 2px dashed #d9bc9f;
+        padding-bottom: 40px;
+    }
+}
+/* Clean Minimalist Navbar */
+.navbar {
+    background-color: #ffffff; /* Pure white for a clean look */
+    border-bottom: 2px solid #f4ece1; /* Very light cream line instead of a heavy border */
+    padding: 0.8rem 0;
+}
+
+/* Logo Image Styling */
+.logo-placeholder {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Subtle shadow instead of a thick border */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08); 
+}
+
+/* Brand Text */
+.navbar-brand span {
+    color: #4b3621; /* Deep Espresso Brown */
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+}
+
+/* Refined Buttons */
+.btn-primary-custom {
+    background-color: #d9bc9f; /* The signature Tan color */
+    color: #ffffff !important;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    text-transform: lowercase; /* Matches your "sign-up" figma style */
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: #c9a688; /* Slightly darker on hover */
+    color: #ffffff;
+}
+
+/* Remove Bootstrap default focus shadow */
+.btn-primary-custom:focus {
+    box-shadow: none;
+}
+/* =========================================
+   THE DAILY GRIND - SIGN-UP MODULE
+   ========================================= */
+
+#signup-module {
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+/* 1. LAYOUT & CARDS */
+/* Outer Tan Card */
+#signup-module .signup-outer-card {
+    background-color: #f5e6d3;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 850px; /* Wider to accommodate 2 columns */
+}
+
+/* White Inner Card */
+#signup-module .signup-inner-card {
+    background-color: #ffffff;
+    border-radius: 18px;
+    width: 100%;
+    max-width: 750px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* 2. HEADERS & TEXT */
+#signup-module .badge-header {
+    background-color: #d9bc9f;
+    color: #5d4037;
+    padding: 10px 35px;
+    border-radius: 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    display: inline-block;
+}
+
+#signup-module .welcome-heading {
+    font-family: 'Playfair Display', serif;
+    color: #5d4037;
+    font-weight: 700;
+}
+
+/* 3. FORM INPUTS & GROUPS */
+#signup-module .custom-input-group {
+    background-color: #f3e5d5;
+    border-radius: 12px;
+    height: 50px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+#signup-module .custom-input-group:focus-within {
+    border-color: #b19481;
+}
+
+#signup-module .form-control-plain {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.9rem;
+    color: #5d4037;
+    padding: 10px 0;
+}
+
+/* Manual Age Input - Hide Spinners */
+#signup-module input[type=number]::-webkit-inner-spin-button, 
+#signup-module input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+/* 4. SELECT / DROPDOWN STYLING */
+#signup-module select.form-control-plain {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238d6e63' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 30px;
+}
+
+/* Styling the Option List */
+#signup-module select#gender option {
+    background-color: #e6ccb2;
+    color: #000000;
+}
+
+#signup-module select#gender option[disabled] {
+    color: #a08d82;
+}
+
+/* 5. INTERACTIVE ELEMENTS */
+#signup-module #passToggle {
+    cursor: pointer;
+    color: #8d6e63;
+}
+
+#signup-module .btn-signup-action {
+    background-color: #b19481;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#signup-module .btn-signup-action:hover {
+    background-color: #8d6e63;
+    transform: translateY(-2px);
+}
+
+#signup-module .footer-text {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* 6. RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    #signup-module .signup-outer-card {
+        border-radius: 0;
+        margin: 0 -15px; /* Full width for small screens */
+    }
+    
+    #signup-module .signup-inner-card {
+        padding: 30px 15px !important;
+    }
+
+    #signup-module .row > div {
+        margin-bottom: 1rem; /* Stack columns with spacing on mobile */
+    }
+}
+.edit-form {
+  background: #f9f1e7;
+  padding: 24px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.edit-form h3 {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+  color: #5a3a1c;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  color: #6d4c2f;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d8b892;
+  background: #fffaf5;
+  font-size: 0.9rem;
+  color: #3c2a1a;
+  outline: none;
+  transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #cf9b67;
+  box-shadow: 0 0 0 2px rgba(207,155,103,0.2);
+}
+
+.form-group input:disabled {
+  background: #eee;
+  cursor: not-allowed;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.btn-group button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+#saveProfileBtn {
+  background: linear-gradient(135deg, #cf9b67, #b87a45);
+  color: #fff;
+}
+
+#saveProfileBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(207,155,103,0.4);
+}
+
+#cancelEditBtn {
+  background: #e6d2b8;
+  color: #5a3a1c;
+}
+
+#cancelEditBtn:hover {
+  background: #d8b892;
+}
+
+/* Smooth Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+#btnBack{
+    border-radius: 50px;
+    margin-left: -300px;
+    border: #f9f1e7;
+}
+#backBtnImg{
+    object-fit: cover;
+    height: 30px;
+}
