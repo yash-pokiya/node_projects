@@ -765,9 +765,16 @@ h1, h2, h3, .navbar-brand {
 #btnBack{
     border-radius: 50px;
     margin-left: -300px;
-    border: #f9f1e7;
+    border: #e17d03;
 }
 #backBtnImg{
     object-fit: cover;
     height: 30px;
+}
+.male {
+  color: #1e90ff;
+}
+
+.female {
+  color: #e75480;
 }

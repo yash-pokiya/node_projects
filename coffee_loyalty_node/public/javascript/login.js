@@ -12,10 +12,11 @@ let userName = document.getElementById("userName");
 let userEmail = document.getElementById("userEmail");
 let profileCard = document.getElementById("profileCard");
 let editBtn = document.getElementById("editBtn");
+const profilePhoto = document.getElementById("profilePhoto");
 
-// --- FUNCTIONS ---
+// FUNCTIONS 
 
-// 1. Toggle Password Visibility
+
 const togglePass = () => {
   const isPassword = password.type === "password";
   password.type = isPassword ? "text" : "password";
@@ -79,7 +80,10 @@ const editDetail = () => {
   const gender = (logedInUser.gender || "").toLowerCase();
   profileCard.innerHTML = `
     <div class="edit-form">
-        <button id="btnBack">Back</button>
+        <button id="btnBack" type="button" aria-label="Go back">
+  <img src="../images/image.png" id="backBtnImg" alt="">
+</button>
+
         <h3>Edit Profile</h3>
         <div class="form-group">
             <label>Full Name</label>
@@ -163,6 +167,18 @@ userName.textContent =
   }
 };
 
+const userPhoto = () => {
+    console.log(gender.textContent);
+    
+    if(gender.textContent.includes("Male")){
+        profilePhoto.classList.remove("female");
+        profilePhoto.classList.add("male")
+    }else{
+        profilePhoto.classList.add("female");
+        profilePhoto.classList.remove("male")
+    }
+}
+window.addEventListener("load" , userPhoto)
 
 if (window.location.href.includes("user-profile.html")) {
   loadData();

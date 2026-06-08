@@ -1,15 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // =======================
-  // DOM ELEMENTS (SAFE)
-  // =======================
   const signUpHeaderBtn = document.getElementById("signUpHeaderBtn");
   const loginHeaderBtn = document.getElementById("loginHeaderBtn");
   const btnJoinNow = document.getElementById("btnJoinNow");
 
-  // =======================
-  // CHECK LOGIN STATE
-  // =======================
 const isLogin = () => {
   const login = JSON.parse(localStorage.getItem("isLogin")) || false;
   if (login) {
@@ -61,9 +55,6 @@ const isLogin = () => {
     });
   }
 
-  // =======================
-  // JOIN / REDEEM
-  // =======================
   if (btnJoinNow) {
     btnJoinNow.addEventListener("click", () => {
       if (btnJoinNow.textContent === "Join Now") {
