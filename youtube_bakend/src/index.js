@@ -1,8 +1,18 @@
-const mongoose = require("mongoose");
-const express = require("express");
-const app = express()
-const { DB_NAME } = require("./constants");
+require("dotenv").config()
+const port = process.env.PORT || 4000;
+const { dbConnect } = require("./db/index");
+const { app } = require("./app");
 
+
+dbConnect()
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`server run at port ${port}`);
+        })
+    })
+    .catch((err) => {
+        console.log(`MongoDb connection error : ${err}`)
+    })
 
 
 /*
