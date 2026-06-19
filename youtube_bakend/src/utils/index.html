@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Pokiya - Backend Developer Resume</title>
+
+    <style>
+        /* =============================================
+           BASE STYLES (Screen View)
+        ============================================= */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* Action bar */
+        .action-bar {
+            max-width: 850px;
+            margin: 2rem auto 1rem;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 1rem;
+        }
+
+        .print-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            background: #0f172a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: background 0.2s;
+        }
+        .print-btn:hover { background: #1e293b; }
+
+        /* =============================================
+           RESUME CONTAINER
+        ============================================= */
+        #resume-container {
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto 3rem;
+            background: #ffffff;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            padding: 35px 50px; /* Tighter padding */
+            border-top: 6px solid #0f172a; /* Premium dark accent border */
+        }
+
+        /* =============================================
+           HEADER
+        ============================================= */
+        header {
+            text-align: center;
+            margin-bottom: 16px; /* Tighter margin */
+            padding-bottom: 14px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .header-name {
+            font-size: 38px; /* Scaled down slightly */
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .header-title {
+            font-size: 15.5px;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #475569;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-item a { color: #0f172a; font-weight: 600; }
+        .contact-item a:hover { text-decoration: underline; }
+        .contact-item svg { width: 14px; height: 14px; color: #64748b; }
+
+        /* =============================================
+           SECTIONS
+        ============================================= */
+        section {
+            margin-bottom: 18px; /* Tighter margin */
+        }
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 14.5px;
+            font-weight: 800;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        /* =============================================
+           SUMMARY
+        ============================================= */
+        .summary-text {
+            font-size: 13.5px;
+            font-weight: 400;
+            color: #334155;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        /* =============================================
+           COMMON ITEM BLOCKS (Experience, Projects, Edu)
+        ============================================= */
+        .item-block {
+            margin-bottom: 12px;
+        }
+        .item-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .item-title {
+            font-size: 15.5px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .item-subtitle {
+            font-size: 14px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 4px;
+        }
+
+        .item-date {
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-left: 8px;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .project-link:hover { color: #374151; }
+        .project-link svg { width: 12px; height: 12px; }
+
+        /* =============================================
+           BULLET LISTS
+        ============================================= */
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 4px;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 13px;
+            font-weight: 400;
+            color: #334155;
+            margin-bottom: 3px;
+            line-height: 1.45;
+        }
+
+        .bullet-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #94a3b8;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* =============================================
+           SKILLS & BADGES
+        ============================================= */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px 20px; /* Reduced vertical gap */
+        }
+
+        .skill-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .skill-label {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .badge {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            padding: 3px 8px; /* Tighter padding */
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+
+        /* =============================================
+           @MEDIA PRINT — Native Browser PDF
+        ============================================= */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            html, body {
+                background: white !important;
+                margin: 0;
+                padding: 0;
+            }
+
+            .action-bar { display: none !important; }
+
+            #resume-container {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 6mm 15mm !important; /* Elegant spacing that perfectly fits 1 A4 page */
+                box-shadow: none !important;
+                border-top: 6px solid #0f172a !important; /* Preserve the premium accent color in print */
+            }
+
+            section, .item-block, .skill-group {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            a { color: #000000 !important; text-decoration: underline !important; }
+            
+            /* Guarantee border colors print cleanly */
+            .badge {
+                border: 1px solid #94a3b8 !important;
+            }
+            .section-title::after, header {
+                border-color: #cbd5e1 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+        <button class="print-btn" onclick="window.print()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            Print / Save as PDF
+        </button>
+    </div>
+
+    <!-- Resume Container -->
+    <div id="resume-container">
+
+        <!-- HEADER -->
+        <header>
+            <h1 class="header-name">Yash Pokiya</h1>
+            <h2 class="header-title">Backend Developer</h2>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <a href="mailto:yashpokiya44@gmail.com">yashpokiya44@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <a href="https://www.linkedin.com/in/yash-pokiya/">linkedin.com/in/yash-pokiya</a>
+                </div>
+                <div class="contact-item">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                    <a href="https://github.com/yash-pokiya">github.com/yash-pokiya</a>
+                </div>
+                <div class="contact-item">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span>Surat, Gujarat, India</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- SUMMARY -->
+        <section>
+            <h3 class="section-title">Summary</h3>
+            <p class="summary-text">
+                Motivated and detail-oriented Backend Developer specializing in JavaScript and Node.js. Experienced in building robust RESTful APIs, managing database integrations, and constructing scalable backend systems utilizing the full MERN stack. Passionate about writing clean code, optimizing application performance, and implementing real-world, user-centric software solutions.
+            </p>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section>
+            <h3 class="section-title">Experience</h3>
+            <div class="item-block">
+                <div class="item-header">
+                    <div class="item-title">MERN Stack Developer Intern</div>
+                    <div class="item-date">Jan 2026 – Present</div>
+                </div>
+                <div class="item-subtitle">LAMinds | Surat, India</div>
+                <ul class="bullet-list">
+                    <li>Actively contributing to full-stack MERN applications, writing clean and modular code.</li>
+                    <li>Designing and implementing scalable RESTful APIs using Node.js and Express.js to handle complex frontend requests.</li>
+                    <li>Integrating and querying MongoDB database systems, utilizing modern ORMs/ODMs for efficient data retrieval.</li>
+                    <li>Collaborating closely with peers using modern npm packages, Git version control, and agile workflows.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section>
+            <h3 class="section-title">Projects</h3>
+            
+            <div class="item-block">
+                <div class="item-header">
+                    <div class="item-title">
+                        Jewellery E-commerce Platform
+                        <a href="https://caratior.vercel.app/" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                            caratior.vercel.app
+                        </a>
+                    </div>
+                </div>
+                <ul class="bullet-list">
+                    <li>Architected a full-stack e-commerce solution utilizing MongoDB, Express, React, and Node.js.</li>
+                    <li>Engineered secure user authentication, dynamic product filtering, and a state-managed shopping cart logic.</li>
+                    <li>Successfully deployed the frontend to Vercel and the backend web services to Render.</li>
+                </ul>
+            </div>
+
+            <div class="item-block">
+                <div class="item-header">
+                    <div class="item-title">
+                        Real Estate Platform (Nestly)
+                        <a href="https://nestlyliving.vercel.app/" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                            nestlyliving.vercel.app
+                        </a>
+                    </div>
+                </div>
+                <ul class="bullet-list">
+                    <li>Developed a modern real estate platform with dynamic property listing and advanced search functionalities.</li>
+                    <li>Engineered robust backend architecture to efficiently manage property data, user sessions, and inquiries.</li>
+                    <li>Designed a responsive and intuitive user interface to provide a seamless property browsing experience.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section>
+            <h3 class="section-title">Technical Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <div class="skill-label">Backend</div>
+                    <div class="skill-badges">
+                        <span class="badge">Node.js</span>
+                        <span class="badge">Express.js</span>
+                        <span class="badge">REST APIs</span>
+                        <span class="badge">MongoDB</span>
+                        <span class="badge">Mongoose</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-label">Frontend &amp; Languages</div>
+                    <div class="skill-badges">
+                        <span class="badge">JavaScript (ES6+)</span>
+                        <span class="badge">React.js </span>
+                        <span class="badge">Tailwind CSS</span>
+                        <span class="badge">HTML5/CSS3</span>
+                        <span class="badge">C/C++</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-label">Tools &amp; Platforms</div>
+                    <div class="skill-badges">
+                        <span class="badge">Git &amp; GitHub</span>
+                        <span class="badge">Postman</span>
+                        <span class="badge">MongoDB Compass</span>
+                        <span class="badge">Vercel</span>
+                        <span class="badge">Render</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-label">AI Workflows</div>
+                    <div class="skill-badges">
+                        <span class="badge">AI-Assisted Dev</span>
+                        <span class="badge">Vibe Coding</span>
+                        <span class="badge">Prompt Engineering</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section>
+            <h3 class="section-title">Education</h3>
+            <div class="item-block">
+                <div class="item-header">
+                    <div class="item-title">Bachelor of Computer Applications (BCA)</div>
+                    <div class="item-date">Current (SYBCA Completed)</div>
+                </div>
+                <div class="item-subtitle">Sutex Bank College of Computer Applications, VNSGU</div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

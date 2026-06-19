@@ -20,9 +20,10 @@ app.get("/" , (req,res) => {
 // import routes    
 
 const userRouter = require("./routes/user.routes");
-
+const videoRouter = require("./routes/video.routes")
 
 // route declaration
 app.use("/api/user" , userRouter)
+app.use("/api/video" , videoRouter)
 
 module.exports = {app}

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bansi Vaghani — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background: #d0d0d0;
+  font-family: 'Inter', sans-serif;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+/* ══ HEADER ══ */
+.header {
+  grid-column: 1 / -1;
+  background: #111;
+  color: #fff;
+  padding: 32px 36px 28px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.header-name {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  color: #fff;
+}
+
+.header-role {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-top: 6px;
+}
+
+.header-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  margin-top: 16px;
+}
+
+.hc {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 11.5px; color: #ccc;
+  text-decoration: none;
+}
+.hc svg {
+  width: 12px; height: 12px;
+  stroke: #aaa; fill: none;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ══ SIDEBAR ══ */
+.sidebar {
+  background: #f5f5f5;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ══ MAIN ══ */
+.main {
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ══ Section heading ══ */
+.sec-head {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #111;
+  border-bottom: 1.5px solid #111;
+  padding-bottom: 5px;
+  margin-bottom: 12px;
+}
+
+/* ══ Sidebar skill group ══ */
+.sg-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 7px;
+  margin-top: 12px;
+}
+.sg-label:first-of-type { margin-top: 0; }
+
+.pills {
+  display: flex; flex-wrap: wrap; gap: 5px;
+}
+
+.pill {
+  font-size: 10.5px; font-weight: 500;
+  padding: 3px 9px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background: #fff;
+  color: #222;
+}
+
+.pill.dark {
+  background: #111; color: #fff; border-color: #111;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ══ Sidebar info rows ══ */
+.si-row {
+  display: flex; align-items: flex-start; gap: 7px;
+  font-size: 11.5px; color: #333;
+  margin-bottom: 7px; line-height: 1.45;
+}
+.si-row svg {
+  width: 12px; height: 12px; flex-shrink: 0; margin-top: 1px;
+  stroke: #555; fill: none;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ══ Summary ══ */
+.summary-text {
+  font-size: 12.5px; color: #444; line-height: 1.75;
+}
+
+/* ══ Experience / Education block ══ */
+.block {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eee;
+}
+.block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+
+.block-top {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;
+}
+
+.block-title {
+  font-size: 13px; font-weight: 700; color: #111; line-height: 1.3;
+}
+
+.block-date {
+  font-size: 10.5px; color: #777; white-space: nowrap; flex-shrink: 0; margin-top: 1px;
+}
+
+.block-sub {
+  font-size: 11.5px; color: #555; margin-top: 3px; font-style: italic;
+}
+
+.block-link {
+  font-size: 11px; color: #555; margin-top: 2px; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+
+.bullets {
+  margin-top: 8px;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bullets li {
+  font-size: 11.5px; color: #444; line-height: 1.6;
+  display: flex; align-items: flex-start; gap: 7px;
+}
+
+.bullets li::before {
+  content: '▹';
+  color: #111; flex-shrink: 0; margin-top: 0px; font-size: 10px; margin-top: 2px;
+}
+
+/* ══ PRINT ══ */
+@media print {
+  @page { size: A4; margin: 0; }
+  html, body { width: 210mm; height: 297mm; margin: 0; padding: 0; background: #fff; }
+  .page { width: 210mm; min-height: 297mm; }
+  .sidebar { background: #f5f5f5 !important; }
+  .pill.dark { background: #111 !important; color: #fff !important; }
+  .header { background: #111 !important; }
+}
+
+@media screen {
+  body { padding: 28px 10px; }
+  .page { box-shadow: 0 4px 40px rgba(0,0,0,0.15); }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-name">Bansi Vaghani</div>
+    <div class="header-role">AI / ML Learner &nbsp;·&nbsp; Web Developer &nbsp;·&nbsp; Fresher</div>
+    <div class="header-contacts">
+      <a class="hc" href="mailto:bansivaghani708@gmail.com">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        bansivaghani708@gmail.com
+      </a>
+      <a class="hc" href="https://www.linkedin.com/in/vaghani-bansi-ba44753a3/" target="_blank">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+        linkedin.com/in/vaghani-bansi
+      </a>
+      <a class="hc" href="https://github.com/bansi-vaghani07" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        github.com/bansi-vaghani07
+      </a>
+      <span class="hc">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Surat, Gujarat, India
+      </span>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- Skills -->
+    <div>
+      <div class="sec-head">Technical Skills</div>
+
+      <div class="sg-label">AI / ML</div>
+      <div class="pills">
+        <span class="pill dark">Python</span>
+        <span class="pill dark">AI / ML</span>
+      </div>
+
+      <div class="sg-label">Web &amp; Frontend</div>
+      <div class="pills">
+        <span class="pill">HTML5</span>
+        <span class="pill">CSS3</span>
+        <span class="pill">PHP</span>
+      </div>
+
+      <div class="sg-label">Programming</div>
+      <div class="pills">
+        <span class="pill">C</span>
+        <span class="pill">C++</span>
+      </div>
+
+      <div class="sg-label">Database</div>
+      <div class="pills">
+        <span class="pill">pgMyAdmin</span>
+      </div>
+
+      <div class="sg-label">Tools</div>
+      <div class="pills">
+        <span class="pill">Git</span>
+        <span class="pill">GitHub</span>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div>
+      <div class="sec-head">Education</div>
+
+      <div class="si-row" style="flex-direction:column; gap:2px; align-items:flex-start;">
+        <span style="font-size:12px; font-weight:600; color:#111;">AI / ML Course</span>
+        <span style="font-size:11px; color:#555;">AISECT, Surat</span>
+        <span style="font-size:10.5px; color:#888; margin-top:1px;">Ongoing</span>
+      </div>
+
+      <div style="height:10px;"></div>
+
+      <div class="si-row" style="flex-direction:column; gap:2px; align-items:flex-start;">
+        <span style="font-size:12px; font-weight:600; color:#111;">BCA</span>
+        <span style="font-size:11px; color:#555;">SSASIT, Surat</span>
+        <span style="font-size:10.5px; color:#888; margin-top:1px;">SYBCA Completed</span>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div>
+      <div class="sec-head">Languages</div>
+      <div class="si-row">
+        <svg viewBox="0 0 24 24"><path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+        Gujarati — Native
+      </div>
+      <div class="si-row">
+        <svg viewBox="0 0 24 24"><path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+        Hindi — Fluent
+      </div>
+      <div class="si-row">
+        <svg viewBox="0 0 24 24"><path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+        English — Working
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- Summary -->
+    <div>
+      <div class="sec-head">Summary</div>
+      <p class="summary-text">
+        Motivated and detail-oriented fresher with a strong foundation in web technologies and a growing specialization in Artificial Intelligence and Machine Learning. Currently pursuing an AI/ML course at AISECT, Surat, building practical skills in Python, data science, and applied machine learning. Passionate about writing clean code, solving real-world problems, and building user-centric software solutions.
+      </p>
+    </div>
+
+    <!-- Education Detail -->
+    <div>
+      <div class="sec-head">Education</div>
+
+      <div class="block">
+        <div class="block-top">
+          <div class="block-title">AI / ML Course</div>
+          <div class="block-date">Ongoing</div>
+        </div>
+        <div class="block-sub">AISECT, Surat</div>
+        <ul class="bullets">
+          <li>Studying machine learning fundamentals, supervised and unsupervised learning algorithms.</li>
+          <li>Hands-on practice with Python for data science including NumPy, Pandas, and Matplotlib.</li>
+          <li>Exploring applied AI techniques and real-world problem-solving through project work.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div class="block-top">
+          <div class="block-title">Bachelor of Computer Applications (BCA)</div>
+          <div class="block-date">SYBCA Completed</div>
+        </div>
+        <div class="block-sub">Shree Swami Atmanand Saraswati Institute of Technology (SSASIT), Surat</div>
+        <ul class="bullets">
+          <li>Completed Second Year with core subjects including programming, databases, and networking.</li>
+          <li>Gained foundational knowledge in C, C++, PHP, HTML/CSS and software development principles.</li>
+          <li>Worked on academic projects involving web development and database management.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div>
+      <div class="sec-head">Projects</div>
+
+      <div class="block">
+        <div class="block-top">
+          <div class="block-title">Portfolio Website</div>
+          <div class="block-date">Upcoming</div>
+        </div>
+        <div class="block-sub">Personal Project</div>
+        <ul class="bullets">
+          <li>Planning to build a personal portfolio showcasing skills, education, and project work.</li>
+          <li>Will be developed using HTML, CSS, and JavaScript with a clean, minimal design.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div class="block-top">
+          <div class="block-title">AI/ML Coursework Projects</div>
+          <div class="block-date">In Progress</div>
+        </div>
+        <div class="block-sub">AISECT, Surat</div>
+        <ul class="bullets">
+          <li>Building hands-on projects as part of AI/ML coursework including data analysis tasks.</li>
+          <li>Applying Python and machine learning libraries to solve structured problems.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
