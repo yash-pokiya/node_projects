@@ -3,7 +3,7 @@ const app = express();
 const cookieParser = require("cookie-parser")
 const cors = require("cors")
 app.use(cors({
-    origin : process.env.CORS_ORIGIN,
+    origin : "*", //process.env.CORS_ORIGIN,
     Credential : true
 }));
 
@@ -16,7 +16,7 @@ app.use(cookieParser())
 app.get("/" , (req,res) => {
     return res.send("hellow world..!!!!");
 })
-
+    
 // import routes    
 
 const userRouter = require("./routes/user.routes");
