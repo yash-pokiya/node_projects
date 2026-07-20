@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;850;900&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --sidebar: #ffffff;
+  --navbar: rgba(255, 255, 255, 0.6);
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --success: #10b981;
+  --success-bg: rgba(16, 185, 129, 0.07);
+  --warning: #f59e0b;
+  --warning-bg: rgba(245, 158, 11, 0.07);
+  --danger: #ef4444;
+  --danger-bg: rgba(239, 68, 68, 0.07);
+  --info: #0ea5e9;
+  --info-bg: rgba(14, 165, 233, 0.07);
+  --medical: #8b5cf6;
+  --medical-bg: rgba(139, 92, 246, 0.07);
+  --input: #ffffff;
+  --input-border: #e2e8f0;
+  --hover: #f1f5f9;
+  --active: #f1f5f9;
+  --shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03), 0 2px 8px -1px rgba(15, 23, 42, 0.02);
+  --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.01), 0 1px 2px -1px rgba(0, 0, 0, 0.01);
+  --card-hover-shadow: 0 10px 20px -3px rgba(15, 23, 42, 0.04), 0 4px 6px -2px rgba(15, 23, 42, 0.02);
+  --chart-grid: rgba(148, 163, 184, 0.1);
+  --chart-text: #64748b;
+  --scrollbar-thumb: #e2e8f0;
+  --scrollbar-thumb-hover: #cbd5e1;
+}
+
+.dark {
+  --background: #0b0f19;
+  --surface: #131b2e;
+  --card: #131b2e;
+  --sidebar: #131b2e;
+  --navbar: rgba(19, 27, 46, 0.6);
+  --foreground: #f8fafc;
+  --muted: #94a3b8;
+  --border: rgba(51, 65, 85, 0.4);
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --success: #34d399;
+  --success-bg: rgba(52, 211, 153, 0.1);
+  --warning: #fbbf24;
+  --warning-bg: rgba(251, 191, 36, 0.1);
+  --danger: #f87171;
+  --danger-bg: rgba(248, 113, 113, 0.1);
+  --info: #38bdf8;
+  --info-bg: rgba(56, 189, 248, 0.1);
+  --medical: #a78bfa;
+  --medical-bg: rgba(167, 139, 250, 0.1);
+  --input: #151e33;
+  --input-border: #334155;
+  --hover: rgba(30, 41, 59, 0.4);
+  --active: #1e293b;
+  --shadow: 0 4px 25px -4px rgba(0, 0, 0, 0.4);
+  --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+  --card-hover-shadow: 0 12px 25px -4px rgba(0, 0, 0, 0.3);
+  --chart-grid: rgba(51, 65, 85, 0.15);
+  --chart-text: #94a3b8;
+  --scrollbar-thumb: #334155;
+  --scrollbar-thumb-hover: #475569;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-sidebar: var(--sidebar);
+  --color-navbar: var(--navbar);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-danger: var(--danger);
+  --color-danger-bg: var(--danger-bg);
+  --color-info: var(--info);
+  --color-info-bg: var(--info-bg);
+  --color-medical: var(--medical);
+  --color-medical-bg: var(--medical-bg);
+  --color-input-bg: var(--input);
+  --color-input-border: var(--input-border);
+  --color-hover: var(--hover);
+  --color-active: var(--active);
+}
+
+@layer base {
+  html, body {
+    @apply h-full m-0 p-0 font-sans transition-colors duration-200 scroll-smooth antialiased;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+/* Premium Light-First Components utilizing tokens */
+.glass-panel {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  @apply transition-all duration-200;
+}
+
+.glass-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+  @apply rounded-2xl transition-all duration-300;
+}
+
+.glass-card:hover {
+  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-1px);
+}
+
+.glass-input {
+  background-color: var(--input);
+  border: 1px solid var(--input-border);
+  color: var(--foreground);
+  @apply rounded-xl px-4 py-2.5 outline-none transition-all duration-250 text-sm;
+}
+
+.glass-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08);
+}
+
+.dark .glass-input:focus {
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+/* Typography Gradient Utility */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 dark:from-white dark:via-slate-200 dark:to-slate-400 font-extrabold;
+}
+
+/* Status colors classes mapping to theme tokens */
+.status-present {
+  background-color: var(--success-bg);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+}
+.status-absent {
+  background-color: var(--danger-bg);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+}
+.status-holiday {
+  background-color: var(--info-bg);
+  color: var(--info);
+  border: 1px solid rgba(14, 165, 233, 0.15);
+}
+.status-medical {
+  background-color: var(--medical-bg);
+  color: var(--medical);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+.status-sports {
+  background-color: var(--success-bg);
+  color: var(--primary);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+.status-cancelled {
+  background-color: var(--warning-bg);
+  color: var(--warning);
+  border: 1px solid rgba(251, 191, 36, 0.15);
+}
+.status-extra {
+  background-color: var(--success-bg);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+}
+.status-half {
+  background-color: var(--warning-bg);
+  color: var(--warning);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  @apply rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
